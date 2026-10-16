@@ -1,0 +1,27 @@
+﻿commands to implement:
+MOV (MOV:12:10) (moves cursor)
+CYCLING_DOTS {CYCLING_DOTS:3:5:[:200]} // prints a new dot every 3 cycles, up to 5. If wraparound
+
+GENERAL: 
+You can generally add :NOBLOCK as an optional parameter to any command. This will make the command execute non-blocking.
+
+Implemented:
+
+{CLS} : Clears the screen
+{WAIT:X} waits X cycles (W:1000)
+{PCTLOADER:3:2} {%:3:2}  increments the percentage by 3 every 2 cycles, up to a 100. Then completes.
+{REPEAT:10}XXX{END} : when it is inserted into the queue, it duplicates everything and immediately completes.
+{CPUFREQ:XX} : changes cpu frequency to one cycle every XX frames
+{BLINKLOADER:Blinking text:5:10:Completed} : will first flash blinking text 10 times for 5 cycles on / off. Then will write "Completed" and complete
+{INCREMENTER:1000:2000:15} {INC:1000:2000:15} will show 1000, then increment that by 15 every cycle until it reaches 2000, at which point it will complete.
+{RANDOMINT:1000:2000} // generates a random int between 1000 and 2000.
+{CHECKSUM:X}// generates a string of random hex numbers, X characters long
+{PROGRESS:x:-:10:11} // generates a progress bar that starts up as 10 --------- characters but fills up with x characters once every 11 cycles, i.e.: xxxx------
+
+
+// implement aliasing C#-side : CreateAlias("{FAST}", "{CYCSPEED:20}")
+
+// BOOT_SECTOR : disk image type data, generates and cycles through some gibberish. 
+// usage: {REPEAT:50:BOOT_SECTOR:5:3000} {WAIT:3000}
+// support for sprites and monitor canvas control (e.g. scale)
+// IMG {IMG:schematics_12:300:200}

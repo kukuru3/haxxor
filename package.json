@@ -1,0 +1,17 @@
+{
+  "name": "com.kukuru3.haxxor",
+  "version": "1.0.0",
+  "displayName": "Haxxor",
+  "description": "Pseudo-programmable computer console simulator for Unity",
+  "unity": "2020.1",
+  "dependencies": {
+  },
+  "keywords": [
+    "boobs"
+  ],
+  "author": {
+    "name": "KUKURU3",
+    "email": "krunjeni@kukuru3.dev",
+    "url": "https://kukuru3.dev"
+  }
+}
